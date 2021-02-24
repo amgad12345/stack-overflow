@@ -4,31 +4,20 @@ import Page from './pages/Page'
 import Page2 from './pages/Page2'
 import HomePage from './pages/HomePage'
 import NotFound from './pages/NotFound'
+import SingleQuestion from './pages/SingleQuestion'
+import AskQuestion from './pages/AskQuestion'
 
 const App = () => {
   return (
     <Router>
-      <header>
-        <h1>Welcome to my SPA</h1>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Go Home</Link>
-            </li>
-            <li>
-              <Link to="/1">Page 1</Link>
-            </li>
-            <li>
-              <Link to="/2">Page 2</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
       <Switch>
         <Route exact path="/" component={HomePage}></Route>
         <Route exact path="/1" component={Page}></Route>
         <Route exact path="/2" component={Page2}></Route>
+        <Route exact path="/SingleQuestion/:id" component={SingleQuestion}></Route>
+        <Route exact path="/AskQuestion" component={AskQuestion}></Route>
         <Route path="*" component={NotFound}></Route>
+        
       </Switch>
     </Router>
   )
